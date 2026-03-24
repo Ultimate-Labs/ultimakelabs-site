@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Support — Applydin by Ultimake Labs</title>
+  <meta name="description" content="Get help with Applydin. Installation guide, FAQ, and how to report a bug." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ultimakelabs.com/support" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --black: #0a0a0a; --white: #ffffff; --off: #f7f6f3;
+      --ink: #1a1a1a; --mid: #6b6b6b; --border: #e8e6e1; --blue: #0a66c2;
+    }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--ink); line-height: 1.7; }
+
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; border-bottom: 1px solid var(--border); }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 30px; height: 30px; background: var(--black); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+    .nav-brand-name { font-family: 'Bricolage Grotesque', sans-serif; font-size: 16px; font-weight: 700; color: var(--ink); }
+    .nav-back { font-size: 13px; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--ink); }
+
+    .support-hero { background: var(--off); padding: 64px 48px 56px; border-bottom: 1px solid var(--border); }
+    .support-eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--mid); margin-bottom: 16px; }
+    .support-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; letter-spacing: -1.5px; color: var(--ink); line-height: 1.05; margin-bottom: 16px; }
+    .support-sub { font-size: 16px; font-weight: 300; color: var(--mid); max-width: 480px; }
+
+    /* Quick links */
+    .quick-links { display: flex; gap: 12px; padding: 32px 48px; border-bottom: 1px solid var(--border); flex-wrap: wrap; }
+    .quick-link { padding: 10px 20px; background: var(--off); border: 1px solid var(--border); border-radius: 8px; font-size: 13px; font-weight: 500; color: var(--ink); text-decoration: none; transition: border-color 0.2s, background 0.2s; }
+    .quick-link:hover { border-color: var(--blue); color: var(--blue); background: #e8f0fb; }
+
+    /* Content */
+    .support-content { max-width: 780px; margin: 0 auto; padding: 64px 48px; }
+
+    .support-section { margin-bottom: 64px; }
+    .support-section:last-child { margin-bottom: 0; }
+
+    .section-anchor { display: block; margin-top: -20px; padding-top: 20px; }
+
+    .support-content h2 {
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 28px; font-weight: 700; letter-spacing: -0.5px;
+      color: var(--ink); margin-bottom: 24px;
+      padding-bottom: 16px; border-bottom: 1px solid var(--border);
+    }
+
+    /* Install steps */
+    .install-steps { display: flex; flex-direction: column; gap: 16px; }
+    .install-step { display: flex; gap: 20px; align-items: flex-start; }
+    .step-num {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: var(--ink); color: var(--white);
+      font-family: 'Bricolage Grotesque', sans-serif;
+      font-size: 14px; font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; margin-top: 2px;
+    }
+    .step-content { flex: 1; }
+    .step-title { font-size: 15px; font-weight: 600; color: var(--ink); margin-bottom: 4px; }
+    .step-desc { font-size: 14px; color: var(--mid); line-height: 1.6; }
+    .step-desc a { color: var(--blue); text-decoration: none; }
+    .step-desc a:hover { text-decoration: underline; }
+
+    /* FAQ */
+    .faq-list { display: flex; flex-direction: column; gap: 0; }
+    .faq-item { border-bottom: 1px solid var(--border); }
+    .faq-item:first-child { border-top: 1px solid var(--border); }
+    .faq-q {
+      width: 100%; text-align: left; padding: 18px 0;
+      background: none; border: none; cursor: pointer;
+      font-family: 'DM Sans', sans-serif; font-size: 15px; font-weight: 500;
+      color: var(--ink); display: flex; justify-content: space-between; align-items: center; gap: 16px;
+    }
+    .faq-q:hover { color: var(--blue); }
+    .faq-icon { font-size: 18px; color: var(--mid); flex-shrink: 0; transition: transform 0.2s; }
+    .faq-a { display: none; padding: 0 0 18px; font-size: 14px; color: var(--mid); line-height: 1.7; }
+    .faq-a a { color: var(--blue); text-decoration: none; }
+    .faq-a a:hover { text-decoration: underline; }
+    .faq-item.open .faq-a { display: block; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+
+    /* Bug report */
+    .bug-card { background: var(--off); border: 1px solid var(--border); border-radius: 14px; padding: 32px; }
+    .bug-card p { font-size: 15px; color: var(--mid); line-height: 1.7; margin-bottom: 20px; }
+    .bug-steps { list-style: none; margin-bottom: 24px; }
+    .bug-steps li { font-size: 14px; color: var(--mid); padding: 5px 0 5px 20px; position: relative; line-height: 1.6; }
+    .bug-steps li::before { content: ''; position: absolute; left: 0; top: 13px; width: 6px; height: 6px; background: var(--border); border-radius: 50%; }
+    .btn-primary { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: var(--black); color: var(--white); border: none; border-radius: 8px; font-size: 14px; font-weight: 500; font-family: 'DM Sans', sans-serif; text-decoration: none; cursor: pointer; transition: opacity 0.15s; }
+    .btn-primary:hover { opacity: 0.8; }
+
+    /* Contact card */
+    .contact-card { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .contact-option { background: var(--off); border: 1px solid var(--border); border-radius: 14px; padding: 28px; }
+    .contact-icon { font-size: 28px; margin-bottom: 14px; }
+    .contact-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 18px; font-weight: 700; color: var(--ink); margin-bottom: 8px; }
+    .contact-desc { font-size: 13px; color: var(--mid); line-height: 1.6; margin-bottom: 16px; }
+    .contact-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 500; color: var(--blue); text-decoration: none; }
+    .contact-link:hover { text-decoration: underline; }
+
+    footer { background: var(--black); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.4); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+
+    @media (max-width: 768px) {
+      nav, .support-hero { padding: 20px; }
+      .quick-links { padding: 20px; }
+      .support-content { padding: 40px 20px; }
+      .contact-card { grid-template-columns: 1fr; }
+      footer { padding: 24px 20px; flex-direction: column; }
+    }
+  </style>
+</head>
+<body>
+
+<nav>
+  <a href="/" class="nav-brand">
+    <div class="nav-logo-mark">
+      <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+        <path d="M3 15 L9 3 L15 15" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="5.5" y1="10.5" x2="12.5" y2="10.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="nav-brand-name">Ultimake Labs</span>
+  </a>
+  <a href="/" class="nav-back">Back to home</a>
+</nav>
+
+<div class="support-hero">
+  <p class="support-eyebrow">Support</p>
+  <h1 class="support-title">How can we help?</h1>
+  <p class="support-sub">Everything you need to get Applydin working. If you can't find your answer, email us directly.</p>
+</div>
+
+<div class="quick-links">
+  <a href="#install" class="quick-link">How to install</a>
+  <a href="#faq" class="quick-link">FAQ</a>
+  <a href="#bug" class="quick-link">Report a bug</a>
+  <a href="#contact" class="quick-link">Contact us</a>
+</div>
+
+<div class="support-content">
+
+  <!-- Install guide -->
+  <div class="support-section">
+    <span class="section-anchor" id="install"></span>
+    <h2>How to install Applydin</h2>
+    <div class="install-steps">
+      <div class="install-step">
+        <div class="step-num">1</div>
+        <div class="step-content">
+          <div class="step-title">Add to Chrome</div>
+          <p class="step-desc">Visit the <a href="#">Applydin page on the Chrome Web Store</a> and click "Add to Chrome". Confirm the permissions when prompted.</p>
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="step-num">2</div>
+        <div class="step-content">
+          <div class="step-title">Go to LinkedIn</div>
+          <p class="step-desc">Open <a href="https://linkedin.com/jobs" target="_blank">linkedin.com/jobs</a> and search for any role. The Applydin panel will be available via the blue button on the right edge of the page.</p>
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="step-num">3</div>
+        <div class="step-content">
+          <div class="step-title">Open the panel</div>
+          <p class="step-desc">Click the blue Applydin icon on the right edge of LinkedIn — or click the Applydin icon in your Chrome toolbar — to open the side panel.</p>
+        </div>
+      </div>
+      <div class="install-step">
+        <div class="step-num">4</div>
+        <div class="step-content">
+          <div class="step-title">Save your first job</div>
+          <p class="step-desc">Hover over any job card and click the bookmark icon that appears. Your job is instantly saved to the Tracker tab.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="support-section">
+    <span class="section-anchor" id="faq"></span>
+    <h2>Frequently asked questions</h2>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q">Is Applydin free? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes, completely free. No subscription, no trial, no hidden charges. Applydin is free to install and use forever.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Where is my data stored? <span class="faq-icon">+</span></button>
+        <div class="faq-a">All your data — saved jobs, contacts, notes, follow-up dates — is stored locally in your browser using Chrome's built-in storage. Nothing is sent to any server. Your data never leaves your device.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Will I lose my data if I uninstall the extension? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Yes. Since data is stored locally, uninstalling the extension removes it. To keep your data safe, use the Export button in the Applydin panel to download a JSON backup before uninstalling. You can import it again later.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">The panel isn't opening. What do I do? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Try these steps: (1) Click the Applydin icon in your Chrome toolbar. (2) Go to chrome://extensions, find Applydin, and click the refresh icon. (3) Make sure you're on linkedin.com — Applydin only works on LinkedIn pages. (4) Try disabling and re-enabling the extension.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">The bookmark button isn't showing on job cards. <span class="faq-icon">+</span></button>
+        <div class="faq-a">The bookmark button appears when you hover over a job card. If it's not showing, try refreshing the LinkedIn page. LinkedIn occasionally changes their page structure — if the issue persists, please report it as a bug so we can fix the selectors.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Can I use Applydin on multiple devices? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Currently, data is stored locally per device. To transfer data between devices, use the Export function to download your data as a JSON file, then use Import on your other device. Cloud sync is planned for a future version.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Does Applydin work outside of LinkedIn? <span class="faq-icon">+</span></button>
+        <div class="faq-a">Applydin is built specifically for LinkedIn and only activates on linkedin.com pages. You can manually add jobs from other sources using the "Add job manually" button in the Tracker tab.</div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q">Is Applydin affiliated with LinkedIn? <span class="faq-icon">+</span></button>
+        <div class="faq-a">No. Applydin is an independent product built by Ultimake Labs. It is not affiliated with, endorsed by, or connected to LinkedIn Corporation in any way.</div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Bug report -->
+  <div class="support-section">
+    <span class="section-anchor" id="bug"></span>
+    <h2>Report a bug</h2>
+    <div class="bug-card">
+      <p>Found something broken? We fix bugs fast. Before reporting, please check:</p>
+      <ul class="bug-steps">
+        <li>You're on a linkedin.com page (not another site)</li>
+        <li>You've refreshed the LinkedIn page after installing</li>
+        <li>The extension is enabled in chrome://extensions</li>
+        <li>You're using the latest version of Chrome</li>
+      </ul>
+      <p>If the issue persists, email us with as much detail as possible — what you were doing, what happened, and which LinkedIn page you were on.</p>
+      <a href="mailto:hello@ultimakelabs.com?subject=Applydin Bug Report" class="btn-primary">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,12 2,6"/></svg>
+        Email a bug report
+      </a>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="support-section">
+    <span class="section-anchor" id="contact"></span>
+    <h2>Get in touch</h2>
+    <div class="contact-card">
+      <div class="contact-option">
+        <div class="contact-icon">✉️</div>
+        <div class="contact-title">Email support</div>
+        <p class="contact-desc">Send us your question and we'll get back to you within 2 business days.</p>
+        <a href="mailto:hello@ultimakelabs.com" class="contact-link">
+          hello@ultimakelabs.com
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+      <div class="contact-option">
+        <div class="contact-icon">🔒</div>
+        <div class="contact-title">Privacy questions</div>
+        <p class="contact-desc">Questions about how Applydin handles your data or our privacy practices.</p>
+        <a href="/privacy" class="contact-link">
+          Read our privacy policy
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<footer>
+  <span class="footer-brand">Ultimake Labs &copy; 2026</span>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy</a>
+    <a href="/support">Support</a>
+    <a href="mailto:hello@ultimakelabs.com">Contact</a>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+</script>
+
+</body>
+</html>
