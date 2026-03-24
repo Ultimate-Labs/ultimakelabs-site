@@ -3,300 +3,166 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Privacy Policy — Filterdin by Ultimake Labs</title>
+  <title>Privacy Policy — Applydin by Ultimake Labs</title>
+  <meta name="description" content="Applydin is privacy-first. We collect zero user data. All your job search data stays on your device. No tracking, no analytics, no servers." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://ultimakelabs.com/privacy" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://ultimakelabs.com/privacy" />
+  <meta property="og:title" content="Privacy Policy — Applydin by Ultimake Labs" />
+  <meta property="og:description" content="Applydin collects nothing. All your data stays on your device. Zero network requests, no tracking, no analytics." />
+  <meta property="og:site_name" content="Ultimake Labs" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Privacy Policy - Applydin",
+    "url": "https://ultimakelabs.com/privacy",
+    "description": "Privacy policy for the Applydin Chrome extension by Ultimake Labs.",
+    "publisher": { "@type": "Organization", "name": "Ultimake Labs", "url": "https://ultimakelabs.com" },
+    "dateModified": "2026-03-24",
+    "inLanguage": "en-US"
+  }
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --blue:     #0a66c2;
-      --blue-lt:  #e8f0fb;
-      --ink:      #0f1923;
-      --ink-mid:  #3d4f5c;
-      --ink-soft: #8a9ba8;
-      --rule:     #e8edf0;
-      --bg:       #f7f9fb;
-      --white:    #ffffff;
+      --black: #0a0a0a; --white: #ffffff; --off: #f7f6f3;
+      --ink: #1a1a1a; --mid: #6b6b6b; --border: #e8e6e1; --blue: #0a66c2;
     }
-
-    html { scroll-behavior: smooth; }
-
-    body {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 15px;
-      line-height: 1.7;
-      color: var(--ink-mid);
-      background: var(--bg);
-      min-height: 100vh;
-    }
-
-    /* ── Top bar ── */
-    .topbar {
-      position: sticky; top: 0; z-index: 10;
-      background: rgba(247,249,251,0.92);
-      backdrop-filter: blur(10px);
-      border-bottom: 1px solid var(--rule);
-      padding: 0 32px;
-      display: flex; align-items: center; justify-content: space-between;
-      height: 56px;
-    }
-    .topbar-brand {
-      display: flex; align-items: center; gap: 10px;
-      text-decoration: none;
-    }
-    .topbar-logo {
-      font-size: 15px; font-weight: 600; color: var(--ink);
-      letter-spacing: -0.2px;
-    }
-    .topbar-sep { color: var(--rule); font-size: 18px; }
-    .topbar-product {
-      font-size: 13px; font-weight: 500; color: var(--blue);
-    }
-    .topbar-date {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; color: var(--ink-soft);
-    }
-
-    /* ── Page layout ── */
-    .page {
-      max-width: 680px;
-      margin: 0 auto;
-      padding: 64px 24px 96px;
-    }
-
-    /* ── Header ── */
-    .doc-header { margin-bottom: 48px; }
-
-    .doc-eyebrow {
-      font-family: 'DM Mono', monospace;
-      font-size: 11px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 1.5px;
-      color: var(--blue);
-      margin-bottom: 12px;
-      display: block;
-    }
-
-    .doc-title {
-      font-size: 36px; font-weight: 600;
-      color: var(--ink);
-      letter-spacing: -0.8px;
-      line-height: 1.15;
-      margin-bottom: 16px;
-    }
-
-    .doc-meta {
-      display: flex; gap: 20px; align-items: center;
-      flex-wrap: wrap;
-    }
-    .doc-meta-item {
-      font-size: 12px; color: var(--ink-soft);
-      display: flex; align-items: center; gap: 5px;
-    }
-    .doc-meta-dot {
-      width: 4px; height: 4px; border-radius: 50%;
-      background: var(--rule); flex-shrink: 0;
-    }
-
-    /* ── TL;DR box ── */
-    .tldr {
-      background: var(--blue-lt);
-      border-left: 3px solid var(--blue);
-      border-radius: 0 8px 8px 0;
-      padding: 18px 22px;
-      margin-bottom: 48px;
-    }
-    .tldr-label {
-      font-family: 'DM Mono', monospace;
-      font-size: 10px; font-weight: 500;
-      text-transform: uppercase; letter-spacing: 1.2px;
-      color: var(--blue); margin-bottom: 6px; display: block;
-    }
-    .tldr p {
-      font-size: 14px; color: var(--ink);
-      font-weight: 500; line-height: 1.6;
-    }
-
-    /* ── Sections ── */
-    .section { margin-bottom: 40px; }
-
-    .section-title {
-      font-size: 13px; font-weight: 600;
-      color: var(--ink);
-      text-transform: uppercase; letter-spacing: 0.6px;
-      margin-bottom: 12px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid var(--rule);
-    }
-
-    p { margin-bottom: 14px; font-size: 14px; color: var(--ink-mid); }
-    p:last-child { margin-bottom: 0; }
-
-    ul {
-      padding-left: 0; list-style: none;
-      display: flex; flex-direction: column; gap: 8px;
-      margin-bottom: 14px;
-    }
-    li {
-      font-size: 14px; color: var(--ink-mid);
-      display: flex; align-items: flex-start; gap: 10px;
-    }
-    li::before {
-      content: "—";
-      color: var(--blue);
-      font-weight: 600;
-      flex-shrink: 0;
-      margin-top: 1px;
-    }
-
-    /* ── Contact block ── */
-    .contact-block {
-      background: var(--white);
-      border: 1px solid var(--rule);
-      border-radius: 10px;
-      padding: 22px 24px;
-      margin-top: 48px;
-      display: flex; align-items: center; justify-content: space-between;
-      gap: 16px; flex-wrap: wrap;
-    }
-    .contact-block-left p {
-      margin: 0; font-size: 13px;
-    }
-    .contact-block-left strong { color: var(--ink); font-weight: 600; font-size: 14px; }
-    .contact-link {
-      display: inline-block;
-      padding: 9px 18px;
-      background: var(--blue);
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-      font-size: 13px;
-      font-weight: 600;
-      transition: background 0.15s;
-      white-space: nowrap;
-      flex-shrink: 0;
-    }
-    .contact-link:hover { background: #004182; }
-
-    /* ── Footer ── */
-    footer {
-      margin-top: 64px;
-      padding-top: 24px;
-      border-top: 1px solid var(--rule);
-      display: flex; align-items: center; justify-content: space-between;
-      flex-wrap: wrap; gap: 12px;
-    }
-    footer p { font-size: 12px; color: var(--ink-soft); margin: 0; }
-    footer a { color: var(--ink-soft); text-decoration: none; }
-    footer a:hover { color: var(--blue); }
-
-    @media (max-width: 600px) {
-      .topbar { padding: 0 16px; }
-      .doc-title { font-size: 28px; }
-      .page { padding: 40px 16px 64px; }
-      .contact-block { flex-direction: column; }
+    body { font-family: 'DM Sans', sans-serif; background: var(--white); color: var(--ink); line-height: 1.7; }
+    nav { display: flex; align-items: center; justify-content: space-between; padding: 20px 48px; border-bottom: 1px solid var(--border); }
+    .nav-brand { display: flex; align-items: center; gap: 10px; text-decoration: none; }
+    .nav-logo-mark { width: 30px; height: 30px; background: var(--black); border-radius: 7px; display: flex; align-items: center; justify-content: center; }
+    .nav-brand-name { font-family: 'Bricolage Grotesque', sans-serif; font-size: 16px; font-weight: 700; color: var(--ink); }
+    .nav-back { font-size: 13px; color: var(--mid); text-decoration: none; transition: color 0.2s; }
+    .nav-back:hover { color: var(--ink); }
+    .privacy-hero { background: var(--off); padding: 64px 48px 56px; border-bottom: 1px solid var(--border); }
+    .privacy-eyebrow { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--mid); margin-bottom: 16px; }
+    .privacy-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: clamp(36px, 5vw, 56px); font-weight: 800; letter-spacing: -1.5px; color: var(--ink); line-height: 1.05; margin-bottom: 16px; }
+    .privacy-sub { font-size: 16px; font-weight: 300; color: var(--mid); max-width: 480px; }
+    .tldr-section { padding: 48px; border-bottom: 1px solid var(--border); }
+    .tldr-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--mid); margin-bottom: 20px; }
+    .tldr-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .tldr-card { background: var(--off); border: 1px solid var(--border); border-radius: 14px; padding: 24px; }
+    .tldr-icon { font-size: 24px; margin-bottom: 12px; }
+    .tldr-card-title { font-family: 'Bricolage Grotesque', sans-serif; font-size: 16px; font-weight: 700; color: var(--ink); margin-bottom: 6px; }
+    .tldr-card-desc { font-size: 13px; color: var(--mid); line-height: 1.6; }
+    .privacy-content { max-width: 720px; margin: 0 auto; padding: 64px 48px; }
+    .privacy-content h2 { font-family: 'Bricolage Grotesque', sans-serif; font-size: 22px; font-weight: 700; letter-spacing: -0.3px; color: var(--ink); margin: 48px 0 16px; padding-top: 48px; border-top: 1px solid var(--border); }
+    .privacy-content h2:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+    .privacy-content p { font-size: 15px; color: var(--mid); margin-bottom: 16px; line-height: 1.8; }
+    .privacy-content ul { list-style: none; margin-bottom: 16px; }
+    .privacy-content ul li { font-size: 15px; color: var(--mid); padding: 6px 0 6px 20px; position: relative; line-height: 1.7; }
+    .privacy-content ul li::before { content: ''; position: absolute; left: 0; top: 14px; width: 6px; height: 6px; background: var(--border); border-radius: 50%; }
+    .privacy-content strong { color: var(--ink); font-weight: 500; }
+    .privacy-content a { color: var(--blue); text-decoration: none; }
+    .privacy-content a:hover { text-decoration: underline; }
+    .date-badge { display: inline-block; padding: 4px 12px; background: var(--off); border: 1px solid var(--border); border-radius: 20px; font-size: 12px; color: var(--mid); margin-top: 48px; }
+    footer { background: var(--black); padding: 32px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; }
+    .footer-brand { font-family: 'Bricolage Grotesque', sans-serif; font-size: 14px; font-weight: 600; color: rgba(255,255,255,0.4); }
+    .footer-links { display: flex; gap: 24px; }
+    .footer-links a { font-size: 13px; color: rgba(255,255,255,0.3); text-decoration: none; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.7); }
+    @media (max-width: 768px) {
+      nav, .privacy-hero, .tldr-section { padding: 20px; }
+      .tldr-grid { grid-template-columns: 1fr; }
+      .privacy-content { padding: 40px 20px; }
+      footer { padding: 24px 20px; flex-direction: column; }
     }
   </style>
 </head>
 <body>
+<nav>
+  <a href="/" class="nav-brand">
+    <div class="nav-logo-mark">
+      <svg width="16" height="16" viewBox="0 0 18 18" fill="none">
+        <path d="M3 15 L9 3 L15 15" stroke="white" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+        <line x1="5.5" y1="10.5" x2="12.5" y2="10.5" stroke="white" stroke-width="1.8" stroke-linecap="round"/>
+      </svg>
+    </div>
+    <span class="nav-brand-name">Ultimake Labs</span>
+  </a>
+  <a href="/" class="nav-back">Back to home</a>
+</nav>
 
-  <div class="topbar">
-    <a class="topbar-brand" href="/">
-      <span class="topbar-logo">Ultimake Labs</span>
-      <span class="topbar-sep">·</span>
-      <span class="topbar-product">Filterdin</span>
-    </a>
-    <span class="topbar-date">Last updated: March 2026</span>
+<div class="privacy-hero">
+  <p class="privacy-eyebrow">Legal</p>
+  <h1 class="privacy-title">Privacy Policy</h1>
+  <p class="privacy-sub">Applydin is built privacy-first. Here is exactly what we collect, store, and do with your data.</p>
+</div>
+
+<div class="tldr-section">
+  <p class="tldr-label">The short version</p>
+  <div class="tldr-grid">
+    <div class="tldr-card">
+      <div class="tldr-icon">🔒</div>
+      <div class="tldr-card-title">Zero data collected</div>
+      <p class="tldr-card-desc">We collect absolutely nothing about you. No analytics, no tracking, no telemetry.</p>
+    </div>
+    <div class="tldr-card">
+      <div class="tldr-icon">💾</div>
+      <div class="tldr-card-title">Stays on your device</div>
+      <p class="tldr-card-desc">All your jobs, contacts, and notes are stored locally in your browser. Nothing is sent to any server.</p>
+    </div>
+    <div class="tldr-card">
+      <div class="tldr-icon">🚫</div>
+      <div class="tldr-card-title">No third parties</div>
+      <p class="tldr-card-desc">We do not share, sell, or transfer your data to any third party. Ever.</p>
+    </div>
   </div>
+</div>
 
-  <div class="page">
+<div class="privacy-content">
+  <h2>Who we are</h2>
+  <p>Ultimake Labs is an independent software company that builds focused productivity tools. Applydin is our Chrome extension for job search tracking. We are based in India and can be reached at <a href="mailto:hello@ultimakelabs.com">hello@ultimakelabs.com</a>.</p>
 
-    <div class="doc-header">
-      <span class="doc-eyebrow">Legal</span>
-      <h1 class="doc-title">Privacy Policy</h1>
-      <div class="doc-meta">
-        <span class="doc-meta-item">Filterdin Browser Extension</span>
-        <span class="doc-meta-dot"></span>
-        <span class="doc-meta-item">Effective: March 2026</span>
-        <span class="doc-meta-dot"></span>
-        <span class="doc-meta-item">Version 0.9 (Beta)</span>
-      </div>
-    </div>
+  <h2>What data Applydin collects</h2>
+  <p><strong>None.</strong> Applydin does not collect, transmit, or store any personal data on external servers. There are no analytics, no crash reporting, no usage tracking, and no account creation required.</p>
+  <p>All data you create within Applydin — saved jobs, contacts, notes, follow-up dates, filter preferences — is stored exclusively in your browser using Chrome's local storage API. This data never leaves your device.</p>
 
-    <div class="tldr">
-      <span class="tldr-label">TL;DR</span>
-      <p>Filterdin collects nothing. All your data stays on your device. We make zero network requests. No tracking, no analytics, no servers.</p>
-    </div>
+  <h2>What permissions Applydin requests and why</h2>
+  <ul>
+    <li><strong>storage</strong> — to save your job tracker data locally on your device</li>
+    <li><strong>sidePanel</strong> — to display the Applydin panel natively inside Chrome</li>
+    <li><strong>alarms</strong> — to trigger follow-up reminder notifications at times you set</li>
+    <li><strong>notifications</strong> — to show browser notifications for follow-up reminders you have scheduled</li>
+    <li><strong>activeTab</strong> — to read the current LinkedIn page and inject save buttons onto job cards, profiles, and feed posts</li>
+    <li><strong>host permission for linkedin.com</strong> — the extension operates exclusively on LinkedIn pages</li>
+  </ul>
+  <p>None of these permissions are used to collect or transmit your data externally.</p>
 
-    <div class="section">
-      <div class="section-title">Overview</div>
-      <p>Filterdin is a Chrome browser extension built by Ultimake Labs. It adds advanced job filtering, bookmarking, and application tracking features to LinkedIn's job search feed.</p>
-      <p>This policy explains what data Filterdin does and does not collect, and how your information is handled.</p>
-    </div>
+  <h2>LinkedIn data</h2>
+  <p>When you use Applydin on LinkedIn, the extension reads information visible on the current page — such as job titles, company names, and profile names — solely to populate your local tracker. This information is stored on your device only and is not sent anywhere.</p>
+  <p>Applydin is not affiliated with, endorsed by, or connected to LinkedIn Corporation.</p>
 
-    <div class="section">
-      <div class="section-title">Data We Collect</div>
-      <p>Filterdin does not collect any data. Specifically:</p>
-      <ul>
-        <li>We do not collect your name, email, or any personal identifiers</li>
-        <li>We do not collect your LinkedIn activity, job searches, or browsing history</li>
-        <li>We do not collect your filter settings, saved jobs, or tracker data</li>
-        <li>We do not use cookies, pixels, or any tracking technologies</li>
-        <li>We do not run analytics or crash reporting of any kind</li>
-      </ul>
-    </div>
+  <h2>Export and import</h2>
+  <p>Applydin includes an Export feature that allows you to download all your data as a JSON file to your device. This file is created locally and is never uploaded or shared. You can also import a previously exported file to restore your data.</p>
 
-    <div class="section">
-      <div class="section-title">Local Storage</div>
-      <p>All data generated by Filterdin — including your filter preferences, bookmarked jobs, application tracker entries, and resume keywords — is stored exclusively in your browser using Chrome's built-in <code style="font-family:'DM Mono',monospace;font-size:12px;background:#f0f4f8;padding:1px 5px;border-radius:3px;">chrome.storage.local</code> API.</p>
-      <p>This means your data:</p>
-      <ul>
-        <li>Never leaves your device</li>
-        <li>Is never transmitted to any server, including ours</li>
-        <li>Is only accessible by you, on your machine</li>
-        <li>Can be deleted at any time by removing the extension</li>
-      </ul>
-    </div>
+  <h2>Data retention and deletion</h2>
+  <p>Your data persists in your browser's local storage until you choose to delete it. You can clear all Applydin data at any time by uninstalling the extension. Uninstalling Applydin permanently removes all locally stored data.</p>
 
-    <div class="section">
-      <div class="section-title">Network Requests</div>
-      <p>Filterdin makes zero external network requests. The extension operates entirely within your browser on the LinkedIn jobs page. It reads and modifies the page's existing content — it does not fetch data from, or send data to, any external service or API.</p>
-    </div>
+  <h2>Children's privacy</h2>
+  <p>Applydin is intended for use by adults engaged in professional job searching. We do not knowingly collect data from anyone under the age of 18.</p>
 
-    <div class="section">
-      <div class="section-title">Third Parties</div>
-      <p>Filterdin does not share any data with third parties because it does not collect any data to share. No advertising networks, analytics platforms, or data brokers are involved in any way.</p>
-    </div>
+  <h2>Changes to this policy</h2>
+  <p>If we make material changes to this policy, we will update the date below and note the changes. Since we collect no data, changes are unlikely to affect your privacy in practice.</p>
 
-    <div class="section">
-      <div class="section-title">LinkedIn</div>
-      <p>Filterdin operates on LinkedIn's website but is not affiliated with, endorsed by, or connected to LinkedIn Corporation in any way. Filterdin only reads content that LinkedIn already renders in your browser — it does not access your LinkedIn account, credentials, or private data.</p>
-    </div>
+  <h2>Contact</h2>
+  <p>Questions about this policy? Email us at <a href="mailto:hello@ultimakelabs.com">hello@ultimakelabs.com</a>. We respond to all emails within 2 business days.</p>
 
-    <div class="section">
-      <div class="section-title">Children's Privacy</div>
-      <p>Filterdin is intended for use by job seekers and professionals. It is not directed at children under the age of 13, and we do not knowingly collect information from children.</p>
-    </div>
+  <div class="date-badge">Last updated: 24 March 2026</div>
+</div>
 
-    <div class="section">
-      <div class="section-title">Changes to This Policy</div>
-      <p>If we make material changes to this privacy policy, we will update the "Last updated" date at the top of this page. Continued use of Filterdin after any changes constitutes acceptance of the updated policy.</p>
-    </div>
-
-    <div class="contact-block">
-      <div class="contact-block-left">
-        <strong>Questions about this policy?</strong>
-        <p>We're happy to clarify anything. Reach out directly.</p>
-      </div>
-      <a class="contact-link" href="mailto:hello@ultimakelabs.com">hello@ultimakelabs.com</a>
-    </div>
-
-    <footer>
-      <p>© 2026 Ultimake Labs. All rights reserved.</p>
-      <p><a href="/">ultimakelabs.com</a></p>
-    </footer>
-
+<footer>
+  <span class="footer-brand">Ultimake Labs &copy; 2026</span>
+  <div class="footer-links">
+    <a href="/">Home</a>
+    <a href="/privacy">Privacy</a>
+    <a href="mailto:hello@ultimakelabs.com">Contact</a>
   </div>
-
+</footer>
 </body>
 </html>
